@@ -1,0 +1,120 @@
+@import "./mixins.scss";
+
+.feature {
+  margin-top: 200px;
+}
+.creators {
+  margin-top: 200px;
+  &-content {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 15px;
+    .creator-item {
+      height: 525px;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      transition: background 0.6s ease-in-out;
+      &__active {
+        background: rgba(255, 255, 255, 0.5);
+        box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+      }
+      &__background {
+        border-radius: 10px;
+        height: 50%;
+        width: 100%;
+      }
+      &__content {
+        padding: 0 26px;
+        transform: translate(0, -70px);
+        height: 55%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        gap: 10px;
+        img {
+          width: 99px;
+          height: 99px;
+          border-radius: 50%;
+        }
+        h3 {
+          @include defaultText(20px, 30px);
+        }
+        p {
+          @include p;
+          font-size: 15px;
+          line-height: 22.5px;
+        }
+        li {
+          margin-top: 10px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.dropDown {
+  margin-top: 200px;
+  @include p;
+  line-height: 30px;
+  cursor: pointer;
+  &-content {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 15px;
+    .dropDown-content__left,
+    .dropDown-content__right {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+    .drop-item {
+      border-color: rgba(255, 255, 255, 0.5);
+      border-style: solid;
+      border-top: 0;
+      border-right: 0;
+      border-left: 0;
+      padding: 20px 0;
+      transition: all 0.6s ease;
+      &:hover {
+        p {
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
+      &__preview {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      &:hover {
+        .drop-item__preview-icon {
+          animation: iconOpen 2s;
+        }
+      }
+    }
+    .drop-item__active {
+      transition: all 0.6s ease;
+      overflow: hidden;
+      height: 240px;
+      &-content {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+@keyframes iconOpen {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

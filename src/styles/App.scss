@@ -1,0 +1,191 @@
+@import "./mixins.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(113.49deg, #984d38 -30.3%, #181e41 58.12%);
+  height: 100%;
+  width: 100%;
+  padding: 10px 120px;
+  @include defaultText(20px, 45px);
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.button {
+  @include button;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.active-button {
+  background: linear-gradient(214.02deg, #b75cff 6.04%, #671ae4 92.95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 1px solid;
+  border-color: linear-gradient(214.02deg, #b75cff 6.04%, #671ae4 92.95%);
+  &:hover {
+    background: linear-gradient(214.02deg, #b75cff 6.04%, #671ae4 92.95%);
+    -webkit-background-clip: text;
+  }
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .header-input {
+    background-image: url("../../public//assets/search.png");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position-y: center;
+    background-position-x: 10px;
+    width: 30%;
+    height: 50px;
+    @include defaultText(20px, 30px);
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px 50px 10px 40px;
+    font-weight: 500;
+    border: none;
+  }
+  .header-sections {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    &:hover li:not(:hover) {
+      opacity: 0.3;
+    }
+  }
+}
+.logo {
+  h3 {
+    @include defaultText(25px, 38px);
+    background: linear-gradient(90deg, #b75cff 0%, #671ae4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+.block-header {
+  text-align: center;
+  h1 {
+    @include defaultText(40px, 47px);
+  }
+  p {
+    margin-top: 10px;
+    @include p;
+    line-height: 30px;
+  }
+}
+
+// burger
+.burgerMenu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 50px;
+  .burgerMenu-close {
+    position: fixed;
+    top: 20px;
+    right: 60px;
+  }
+  .header-input {
+    margin-top: 100px;
+    width: 80%;
+  }
+  .header-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+// fixed navbar
+.burger-header {
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  position: fixed;
+}
+
+// burger button
+.burger-btn__wrapper {
+  cursor: pointer;
+  width: 40px;
+  height: 30px;
+  top: 20px;
+  right: 20px;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 6px;
+    background: rgba(255, 255, 255, 1);
+  }
+  span {
+    position: absolute;
+    top: 10px;
+    width: 50px;
+    background-color: rgba(255, 255, 255, 1);
+    height: 6px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    width: 50px;
+    height: 6px;
+    background: rgba(255, 255, 255, 1);
+  }
+  &-close {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      width: 50px;
+      height: 6px;
+      background: rgba(255, 255, 255, 1);
+      transform: rotate(45deg);
+    }
+    span {
+      display: none;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      width: 50px;
+      height: 6px;
+      background: rgba(255, 255, 255, 1);
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+@media screen and (max-width: 1305px) {
+  body {
+    padding: 10px 20px;
+  }
+}

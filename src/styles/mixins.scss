@@ -1,0 +1,45 @@
+@mixin defaultText($size, $lHeight) {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: $size;
+  line-height: $lHeight;
+  color: #ffffff;
+}
+@mixin button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 10px;
+  background: linear-gradient(214.02deg, #b75cff 6.04%, #671ae4 92.95%);
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  &:hover {
+    background: linear-gradient(180deg, #671ae4, #b75cff 90%);
+  }
+}
+@mixin p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 180%;
+  color: rgba(255, 255, 255, 0.5);
+}
+@mixin opacityButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  &:hover {
+    background: rgba($color: grey, $alpha: 0.5);
+  }
+}

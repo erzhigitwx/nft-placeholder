@@ -1,0 +1,237 @@
+@import "./mixins.scss";
+
+.home-block {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 120px;
+  .left-block {
+    padding: 20px 0;
+    &__text {
+      @include defaultText(50px, 120%);
+    }
+    &__des {
+      margin-top: 10px;
+      @include p;
+    }
+    &__buttons {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      .buy-nft {
+        @include opacityButton;
+        padding: 5px 20px 5px 20px;
+      }
+    }
+    &__statistics {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2px;
+        h1 {
+          @include defaultText(30px, 45px);
+        }
+        p {
+          @include p;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+  .right-block {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    img {
+      border-radius: 12px;
+      transition: all 0.9s ease;
+      &:hover {
+        transform: scaleX(-0.5);
+        transform: scaleX(0.5);
+      }
+    }
+    &__content {
+      display: flex;
+      gap: 15px;
+      &-column1 {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        .nft-img1 {
+          height: 140px;
+          width: 190px;
+        }
+        .nft-img2 {
+          width: 190px;
+          height: 110px;
+        }
+        .nft-img3 {
+          width: 187px;
+          height: 220px;
+        }
+      }
+      &-column2 {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        .nft-img4 {
+          width: 187px;
+          height: 220px;
+        }
+        .nft-img5 {
+          width: 187px;
+          height: 127px;
+        }
+        .nft-img6 {
+          width: 179px;
+          height: 159px;
+        }
+      }
+    }
+    .tv-center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+.platforms {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.about {
+  margin-top: 150px;
+  &-container {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 120px;
+    align-items: center;
+    img {
+      width: 490px;
+      height: 600px;
+      background: #c4c4c4;
+      border-radius: 10px;
+    }
+
+    &__right {
+      h3 {
+        @include defaultText(30px, 45px);
+      }
+      p {
+        @include p;
+        margin-top: 10px;
+      }
+      li {
+        margin-top: 30px;
+        width: 30%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1140px) {
+  .home-block {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    .right-block {
+      justify-content: center;
+    }
+  }
+  .platforms {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .about {
+    &-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      &__right {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+@media screen and (max-width: 630px) {
+  .App {
+    .home-block {
+      .right-block {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        &__content {
+          gap: 5px;
+          &-column1 {
+            gap: 5px;
+            align-items: flex-end;
+            .nft-img1 {
+              width: 80%;
+              height: 80%;
+            }
+            .nft-img2 {
+              width: 80%;
+              height: 80%;
+            }
+            .nft-img3 {
+              width: 80%;
+              height: 80%;
+            }
+          }
+          &-column2 {
+            gap: 5px;
+            .nft-img4 {
+              width: 80%;
+              height: 80%;
+            }
+            .nft-img5 {
+              width: 80%;
+              height: 80%;
+            }
+            .nft-img6 {
+              width: 80%;
+              height: 80%;
+            }
+          }
+        }
+      }
+      .left-block {
+        &__statistics {
+          gap: 0px;
+        }
+      }
+    }
+    .about {
+      &-container {
+        img {
+          width: 340px;
+          height: 450px;
+        }
+        &__right {
+          li {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
