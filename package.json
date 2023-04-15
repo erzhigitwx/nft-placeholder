@@ -7,6 +7,8 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "eject": "react-scripts eject",
+    "build": "react-scripts build",
     "dev": "vite",
     "preview": "vite preview"
   },
