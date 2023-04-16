@@ -6,7 +6,7 @@
   "homepage": "https://erzhigitwx.github.io/nft-placeholder",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "eject": "react-scripts eject",
     "build": "react-scripts build",
     "dev": "vite",
@@ -15,7 +15,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-refresh": "^0.14.0"
+    "react-refresh": "^0.14.0",
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
